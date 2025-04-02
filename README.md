@@ -1,4 +1,4 @@
-# **AI Sustainable Living Coach** 🌱🤖
+# **AI Sustainable Living Coach** 
 
 ## **Project Description**  
 The **AI Sustainable Living Coach** is an intelligent chatbot designed to provide guidance on **nutrition, fitness, wellness, and sustainable living**. It acts as a **virtual assistant**, offering advice on **healthy habits, exercise routines, dietary choices, hydration, and mental well-being**.  
