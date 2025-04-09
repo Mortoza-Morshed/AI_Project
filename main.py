@@ -1,32 +1,16 @@
 from flask import Flask, request, jsonify
 import google.generativeai as genai
+from topics import ALLOWED_TOPICS
 
-genai.configure(api_key="*google-api*")  
+genai.configure(api_key="AIzaSyDbtRRb1oQrWjm_0TPA4wqLHmc4CVPZspk")  # Replace with your real API key
 
 app = Flask(__name__)
 
-ALLOWED_TOPICS = {
-    "nutrition", "diet", "meal", "fitness", "mental", "health", "sleep", "exercise", 
-    "wellness", "hydration", "lifestyle", "weight", "metabolism",
-    "calories", "macronutrients", "micronutrients", "protein", "carbohydrates", "fats",
-    "vitamins", "minerals", "gut", "digestion", "superfoods", "antioxidants",
-    "meal planning", "portion control", "fasting", "vegan", "vegetarian",
-    "keto", "paleo", "low-carb", "high-protein", "heart",
-    "diabetes", "cholesterol", "blood", "pressure", "immune", "brain",
-    "stress", "mindfulness", "yoga", "meditation", "posture", "mobility",
-    "stretching", "cardio", "strength", "training", "aerobics", "workout",
-    "home", "gym", "muscle", "recover", "supplements", "probiotic", "detox", 
-    "energy", "circadian rhythm", "sleep", "hygiene", "rest", "recover", 
-    "self-care", "clarity", "emotion", "well-being", "work-life balance",
-    "hormonal", "hormone", "anti-aging", "hydration levels", "electrolytes", "mind-gut connection",
-    "sports", "pregnancy", "child", "senior"
-}
+
 
 @app.route("/")
 def home():
     return "Welcome to the AI Sustainable Living Coach API! Use the /chat endpoint to interact."
-
-
 
 @app.route("/chat", methods=["POST"])
 def chat():
@@ -47,8 +31,6 @@ def chat():
 
         model = genai.GenerativeModel("gemini-1.5-pro")
         response = model.generate_content(user_input)
-
-
         return jsonify({"response": response.text})
 
     except Exception as e:
@@ -56,19 +38,3 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
