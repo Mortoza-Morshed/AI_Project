@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import google.generativeai as genai
 from topics import ALLOWED_TOPICS
 
-genai.configure(api_key="AIzaSyDbtRRb1oQrWjm_0TPA4wqLHmc4CVPZspk")  # Replace with your real API key
+genai.configure(api_key="AIzaSyDbtRRb1oQrWjm_0TPA4wqLHmc4CVPZspk")  
 
 app = Flask(__name__)
 
